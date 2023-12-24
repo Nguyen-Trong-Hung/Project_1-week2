@@ -1,0 +1,66 @@
+{
+  "annotations": {
+    "changelogDate": "20231224123532"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "jobs",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "slug",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "featureImage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validFrom",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "validThrough",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "JobStatus",
+      "fieldValues": "DRAFT,TO,BE,APPROVED,PUBLISHED,TRASHED"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updateDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updateBy",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "Jobs",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "category",
+      "otherEntityRelationshipName": "jobs",
+      "relationshipName": "category",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
